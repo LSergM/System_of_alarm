@@ -1,0 +1,134 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F629 ]
+[d frameptr 6 ]
+"58 D:\Test_Prj\Alarm_System\AlarmSystem.X\main.c
+[e E611 . `uc
+WITHOUT_PROTECT 0
+STARTING_FIST_SIREN 1
+STARTING_SECOND_SIREN 2
+STARTING 3
+AT_THE_GUARD 4
+STOPPING_FIST_SIREN 5
+STOPPING_SECOND_SIREN 6
+STOPPING 7
+]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"23 D:\Test_Prj\Alarm_System\AlarmSystem.X\interrupts.c
+[v _isr isr `II(v  1 e 1 0 ]
+"47 D:\Test_Prj\Alarm_System\AlarmSystem.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"18 D:\Test_Prj\Alarm_System\AlarmSystem.X\system.c
+[v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
+"22 D:\Test_Prj\Alarm_System\AlarmSystem.X\user.c
+[v _InitApp InitApp `(v  1 e 1 0 ]
+[s S55 . 1 `uc 1 GP0 1 0 :1:0 
+`uc 1 GP1 1 0 :1:1 
+`uc 1 GP2 1 0 :1:2 
+`uc 1 GP3 1 0 :1:3 
+`uc 1 GP4 1 0 :1:4 
+`uc 1 GP5 1 0 :1:5 
+]
+"239 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic12f629.h
+[s S62 . 1 `uc 1 GPIO0 1 0 :1:0 
+`uc 1 GPIO1 1 0 :1:1 
+`uc 1 GPIO2 1 0 :1:2 
+`uc 1 GPIO3 1 0 :1:3 
+`uc 1 GPIO4 1 0 :1:4 
+`uc 1 GPIO5 1 0 :1:5 
+]
+[u S69 . 1 `S55 1 . 1 0 `S62 1 . 1 0 ]
+[v _GPIObits GPIObits `VES69  1 e 1 @5 ]
+[s S33 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 CMIF 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"420
+[s S40 . 1 `uc 1 T1IF 1 0 :1:0 
+]
+[u S42 . 1 `S33 1 . 1 0 `S40 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES42  1 e 1 @12 ]
+[s S116 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1GE 1 0 :1:6 
+]
+"517
+[s S123 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[u S127 . 1 `S116 1 . 1 0 `S123 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES127  1 e 1 @16 ]
+[s S177 . 1 `uc 1 CM 1 0 :3:0 
+`uc 1 CIS 1 0 :1:3 
+`uc 1 CINV 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 COUT 1 0 :1:6 
+]
+"581
+[s S183 . 1 `uc 1 CM0 1 0 :1:0 
+`uc 1 CM1 1 0 :1:1 
+`uc 1 CM2 1 0 :1:2 
+]
+[u S187 . 1 `S177 1 . 1 0 `S183 1 . 1 0 ]
+[v _CMCONbits CMCONbits `VES187  1 e 1 @25 ]
+[s S159 . 1 `uc 1 TRISIO0 1 0 :1:0 
+`uc 1 TRISIO1 1 0 :1:1 
+`uc 1 TRISIO2 1 0 :1:2 
+`uc 1 TRISIO3 1 0 :1:3 
+`uc 1 TRISIO4 1 0 :1:4 
+`uc 1 TRISIO5 1 0 :1:5 
+]
+"706
+[u S166 . 1 `S159 1 . 1 0 ]
+[v _TRISIObits TRISIObits `VES166  1 e 1 @133 ]
+[s S142 . 1 `uc 1 WPU0 1 0 :1:0 
+`uc 1 WPU1 1 0 :1:1 
+`uc 1 WPU2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 WPU4 1 0 :1:4 
+`uc 1 WPU5 1 0 :1:5 
+]
+"898
+[u S149 . 1 `S142 1 . 1 0 ]
+[v _WPUbits WPUbits `VES149  1 e 1 @149 ]
+"1102
+[v _VRCON VRCON `VEuc  1 e 1 @153 ]
+"47 D:\Test_Prj\Alarm_System\AlarmSystem.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"61
+[v main@timer timer `uc  1 a 1 6 ]
+"60
+[v main@system_state system_state `uc  1 a 1 5 ]
+"152
+} 0
+"22 D:\Test_Prj\Alarm_System\AlarmSystem.X\user.c
+[v _InitApp InitApp `(v  1 e 1 0 ]
+{
+"52
+} 0
+"18 D:\Test_Prj\Alarm_System\AlarmSystem.X\system.c
+[v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
+{
+"40
+} 0
+"23 D:\Test_Prj\Alarm_System\AlarmSystem.X\interrupts.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"50
+} 0
