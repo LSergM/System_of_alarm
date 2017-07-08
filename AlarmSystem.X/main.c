@@ -17,19 +17,35 @@
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
-#define IN_TURN_ON      (GPIObits.GP5 == 0) 
-#define IN_TURN_OFF     (GPIObits.GP4 == 0)
-#define IN_SENSOR       (GPIObits.GP2 == 0)
+#define UN_HERITATE_ON
+#ifdef UN_HERITATE_ON
+    #define IN_TURN_ON      (inputs & num_in[2]) 
+    #define IN_TURN_OFF     (inputs & num_in[1])
+    #define IN_SENSOR       (inputs & num_in[0])
+#else
+    #define IN_TURN_ON      (0 == GPIObits.GP5) 
+    #define IN_TURN_OFF     (0 == GPIObits.GP4)
+    #define IN_SENSOR       (0 == GPIObits.GP2)
+#endif
 #define OUT_SIREN_OFF   GPIObits.GP1 = 0
 #define OUT_SIREN_ON    GPIObits.GP1 = 1
 #define OUT_SUPPLAY_OFF GPIObits.GP0 = 0
 #define OUT_SUPPLAY_ON  GPIObits.GP0 = 1
 
-#define TIMER_40_SEC    255
-#define TIMER_250_MSEC  1
-#define TIMER_30_SEC    191
-/* i.e. uint8_t <variable_name>; */
+#define TIMER_40_SEC    200
+#define TIMER_250_MSEC  2
+#define TIMER_1_SEC     4
+#define TIMER_30_SEC    300
 
+#define TIME_DELAY      60000U
+#define ACTIV_INPUT     50000U
+
+#define NUM_INPUT      3U
+
+/* i.e. uint8_t <variable_name>; */
+const uint8_t num_in[NUM_INPUT] = {0x04,0x10,0x20};
+
+uint8_t unharitate(void);
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
@@ -58,7 +74,8 @@ void main(void)
     };
     
     uint8_t system_state = STARTING_FIST_SIREN;
-    uint8_t timer = 0;
+    uint8_t inputs = 0;
+    uint16_t timer = 0;
     /* Configure the oscillator for the device */
     ConfigureOscillator();
 
@@ -72,7 +89,9 @@ void main(void)
             PIR1bits.TMR1IF = 0;
             if (timer)  timer--;
         }
-        
+        #ifdef UN_HERITATE_ON
+            inputs = unharitate();
+        #endif    
         switch(system_state)
         {
             case WITHOUT_PROTECT:   
@@ -98,7 +117,12 @@ void main(void)
                 {  
                     timer = TIMER_250_MSEC;                    
                     system_state = STARTING;
-                }                 
+                }            
+                if(IN_TURN_OFF)
+                {                  
+                    timer = TIMER_250_MSEC;
+                    system_state = STOPPING_FIST_SIREN;
+                }
                 break;                
             case STARTING:
                 OUT_SIREN_ON;
@@ -121,7 +145,7 @@ void main(void)
                 }                 
                 break;
             case STOPPING_FIST_SIREN:
-                OUT_SIREN_ON;
+                OUT_SIREN_ON;       
                 OUT_SUPPLAY_OFF;
                 if (0 == timer)
                 {                    
@@ -147,7 +171,32 @@ void main(void)
             default:
                 //system_state = STARTING_FIST_SIREN;
                 break;
-        }                        
+        }
     }
+}
+
+uint8_t unharitate(void)
+{
+    static uint16_t cnt[NUM_INPUT+1];
+    static uint8_t in_state = 0;
+    uint8_t i = 0;
+    
+    for (i=0; i<NUM_INPUT; i++)
+    {
+        if( !(GPIO & num_in[i]) ) 
+            cnt[i]++;
+        else if (cnt[i]) cnt[i]--;
+    }
+    if(++cnt[3] > TIME_DELAY)
+    {
+        cnt[3] = 0;
+        for (i=0; i<NUM_INPUT; i++)
+        {
+            if(cnt[i] > ACTIV_INPUT) in_state |= num_in[i];
+            else in_state &= ~num_in[i];
+            cnt[i] = 0;
+        }            
+    }        
+    return in_state;
 }
 

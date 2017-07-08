@@ -15,7 +15,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S21 . . . ]
 "420
 [v _PIR1bits `VS21 ~T0 @X0 0 e@12 ]
-"222
+"48 main.c
+[v _unharitate `(uc ~T0 @X0 0 ef ]
+"222 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic12f629.h
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S14 . GP0 GP1 GP2 GP3 GP4 GP5 ]
 "230
@@ -26,6 +28,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S13 . . . ]
 "239
 [v _GPIObits `VS13 ~T0 @X0 0 e@5 ]
+"216
+[v _GPIO `Vuc ~T0 @X0 0 e@5 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -594,337 +598,478 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;system.h: 19: void ConfigureOscillator(void);
 [; ;user.h: 13: void InitApp(void);
-"39 main.c
+"46 main.c
+[v _num_in `Cuc ~T0 @X0 -> 3 `ui e ]
+[i _num_in
+:U ..
+-> -> 4 `i `uc
+-> -> 16 `i `uc
+-> -> 32 `i `uc
+..
+]
+[; ;main.c: 46: const uint8_t num_in[3U] = {0x04,0x10,0x20};
+[; ;main.c: 48: uint8_t unharitate(void);
+"55
 [p x FOSC=INTRCIO ]
-"40
+"56
 [p x WDTE=OFF ]
-"41
+"57
 [p x PWRTE=ON ]
-"42
+"58
 [p x MCLRE=OFF ]
-"43
+"59
 [p x BOREN=ON ]
-"44
+"60
 [p x CP=OFF ]
-"45
+"61
 [p x CPD=OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"47
+"63
 [v _main `(v ~T0 @X0 1 ef ]
-"48
+"64
 {
-[; ;main.c: 47: void main(void)
-[; ;main.c: 48: {
+[; ;main.c: 63: void main(void)
+[; ;main.c: 64: {
 [e :U _main ]
 [f ]
-"58
-[c E611 0 1 2 3 4 5 6 7 .. ]
-[n E611 . WITHOUT_PROTECT STARTING_FIST_SIREN STARTING_SECOND_SIREN STARTING AT_THE_GUARD STOPPING_FIST_SIREN STOPPING_SECOND_SIREN STOPPING  ]
-"60
-[v _system_state `uc ~T0 @X0 1 a ]
-[; ;main.c: 49: enum {
-[; ;main.c: 50: WITHOUT_PROTECT = 0,
-[; ;main.c: 51: STARTING_FIST_SIREN = 1,
-[; ;main.c: 52: STARTING_SECOND_SIREN = 2,
-[; ;main.c: 53: STARTING = 3,
-[; ;main.c: 54: AT_THE_GUARD = 4,
-[; ;main.c: 55: STOPPING_FIST_SIREN = 5,
-[; ;main.c: 56: STOPPING_SECOND_SIREN = 6,
-[; ;main.c: 57: STOPPING = 7,
-[; ;main.c: 58: };
-[; ;main.c: 60: uint8_t system_state = STARTING_FIST_SIREN;
-[e = _system_state -> . `E611 1 `uc ]
-"61
-[v _timer `uc ~T0 @X0 1 a ]
-[; ;main.c: 61: uint8_t timer = 0;
-[e = _timer -> -> 0 `i `uc ]
-[; ;main.c: 63: ConfigureOscillator();
-"63
-[e ( _ConfigureOscillator ..  ]
-[; ;main.c: 66: InitApp();
-"66
-[e ( _InitApp ..  ]
-[; ;main.c: 68: while(1)
-"68
-[e :U 71 ]
-[; ;main.c: 69: {
-"69
-{
-[; ;main.c: 70: if(PIR1bits.TMR1IF)
-"70
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 73  ]
-[; ;main.c: 71: {
-"71
-{
-[; ;main.c: 72: PIR1bits.TMR1IF = 0;
-"72
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 73: if (timer) timer--;
-"73
-[e $ ! != -> _timer `i -> -> -> 0 `i `uc `i 74  ]
-[e -- _timer -> -> 1 `i `uc ]
-[e :U 74 ]
 "74
+[c E614 0 1 2 3 4 5 6 7 .. ]
+[n E614 . WITHOUT_PROTECT STARTING_FIST_SIREN STARTING_SECOND_SIREN STARTING AT_THE_GUARD STOPPING_FIST_SIREN STOPPING_SECOND_SIREN STOPPING  ]
+"76
+[v _system_state `uc ~T0 @X0 1 a ]
+[; ;main.c: 65: enum {
+[; ;main.c: 66: WITHOUT_PROTECT = 0,
+[; ;main.c: 67: STARTING_FIST_SIREN = 1,
+[; ;main.c: 68: STARTING_SECOND_SIREN = 2,
+[; ;main.c: 69: STARTING = 3,
+[; ;main.c: 70: AT_THE_GUARD = 4,
+[; ;main.c: 71: STOPPING_FIST_SIREN = 5,
+[; ;main.c: 72: STOPPING_SECOND_SIREN = 6,
+[; ;main.c: 73: STOPPING = 7,
+[; ;main.c: 74: };
+[; ;main.c: 76: uint8_t system_state = STARTING_FIST_SIREN;
+[e = _system_state -> . `E614 1 `uc ]
+"77
+[v _inputs `uc ~T0 @X0 1 a ]
+[; ;main.c: 77: uint8_t inputs = 0;
+[e = _inputs -> -> 0 `i `uc ]
+"78
+[v _timer `ui ~T0 @X0 1 a ]
+[; ;main.c: 78: uint16_t timer = 0;
+[e = _timer -> -> 0 `i `ui ]
+[; ;main.c: 80: ConfigureOscillator();
+"80
+[e ( _ConfigureOscillator ..  ]
+[; ;main.c: 83: InitApp();
+"83
+[e ( _InitApp ..  ]
+[; ;main.c: 85: while(1)
+"85
+[e :U 71 ]
+[; ;main.c: 86: {
+"86
+{
+[; ;main.c: 87: if(PIR1bits.TMR1IF)
+"87
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 73  ]
+[; ;main.c: 88: {
+"88
+{
+[; ;main.c: 89: PIR1bits.TMR1IF = 0;
+"89
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 90: if (timer) timer--;
+"90
+[e $ ! != _timer -> -> 0 `i `ui 74  ]
+[e -- _timer -> -> 1 `i `ui ]
+[e :U 74 ]
+"91
 }
 [e :U 73 ]
-[; ;main.c: 74: }
-[; ;main.c: 76: switch(system_state)
-"76
+[; ;main.c: 91: }
+[; ;main.c: 93: inputs = unharitate();
+"93
+[e = _inputs ( _unharitate ..  ]
+[; ;main.c: 95: switch(system_state)
+"95
 [e $U 76  ]
-[; ;main.c: 77: {
-"77
+[; ;main.c: 96: {
+"96
 {
-[; ;main.c: 78: case WITHOUT_PROTECT:
-"78
+[; ;main.c: 97: case WITHOUT_PROTECT:
+"97
 [e :U 77 ]
-[; ;main.c: 79: GPIObits.GP1 = 0;
-"79
+[; ;main.c: 98: GPIObits.GP1 = 0;
+"98
 [e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 80: if((GPIObits.GP5 == 0))
-"80
-[e $ ! == -> . . _GPIObits 0 5 `i -> 0 `i 78  ]
-[; ;main.c: 81: {
-"81
+[; ;main.c: 99: if((inputs & num_in[2]))
+"99
+[e $ ! != & -> _inputs `i -> *U + &U _num_in * -> -> -> 2 `i `ui `ux -> -> # *U &U _num_in `ui `ux `i -> 0 `i 78  ]
+[; ;main.c: 100: {
+"100
 {
-[; ;main.c: 82: timer = 1;
-"82
-[e = _timer -> -> 1 `i `uc ]
-[; ;main.c: 83: system_state = STARTING_FIST_SIREN;
-"83
-[e = _system_state -> . `E611 1 `uc ]
-"84
+[; ;main.c: 101: timer = 2;
+"101
+[e = _timer -> -> 2 `i `ui ]
+[; ;main.c: 102: system_state = STARTING_FIST_SIREN;
+"102
+[e = _system_state -> . `E614 1 `uc ]
+"103
 }
 [e :U 78 ]
-[; ;main.c: 84: }
-[; ;main.c: 85: break;
-"85
+[; ;main.c: 103: }
+[; ;main.c: 104: break;
+"104
 [e $U 75  ]
-[; ;main.c: 86: case STARTING_FIST_SIREN:
-"86
+[; ;main.c: 105: case STARTING_FIST_SIREN:
+"105
 [e :U 79 ]
-[; ;main.c: 87: GPIObits.GP1 = 1;
-"87
+[; ;main.c: 106: GPIObits.GP1 = 1;
+"106
 [e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 88: if (0 == timer)
-"88
-[e $ ! == -> 0 `i -> _timer `i 80  ]
-[; ;main.c: 89: {
-"89
+[; ;main.c: 107: if (0 == timer)
+"107
+[e $ ! == -> -> 0 `i `ui _timer 80  ]
+[; ;main.c: 108: {
+"108
 {
-[; ;main.c: 90: timer = 255;
-"90
-[e = _timer -> -> 255 `i `uc ]
-[; ;main.c: 91: system_state = STARTING_SECOND_SIREN;
-"91
-[e = _system_state -> . `E611 2 `uc ]
-"92
+[; ;main.c: 109: timer = 200;
+"109
+[e = _timer -> -> 200 `i `ui ]
+[; ;main.c: 110: system_state = STARTING_SECOND_SIREN;
+"110
+[e = _system_state -> . `E614 2 `uc ]
+"111
 }
 [e :U 80 ]
-[; ;main.c: 92: }
-[; ;main.c: 93: break;
-"93
+[; ;main.c: 111: }
+[; ;main.c: 112: break;
+"112
 [e $U 75  ]
-[; ;main.c: 94: case STARTING_SECOND_SIREN:
-"94
+[; ;main.c: 113: case STARTING_SECOND_SIREN:
+"113
 [e :U 81 ]
-[; ;main.c: 95: GPIObits.GP1 = 0;
-"95
+[; ;main.c: 114: GPIObits.GP1 = 0;
+"114
 [e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 96: GPIObits.GP0 = 1;
-"96
+[; ;main.c: 115: GPIObits.GP0 = 1;
+"115
 [e = . . _GPIObits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 97: if (0 == timer)
-"97
-[e $ ! == -> 0 `i -> _timer `i 82  ]
-[; ;main.c: 98: {
-"98
+[; ;main.c: 116: if (0 == timer)
+"116
+[e $ ! == -> -> 0 `i `ui _timer 82  ]
+[; ;main.c: 117: {
+"117
 {
-[; ;main.c: 99: timer = 1;
-"99
-[e = _timer -> -> 1 `i `uc ]
-[; ;main.c: 100: system_state = STARTING;
-"100
-[e = _system_state -> . `E611 3 `uc ]
-"101
+[; ;main.c: 118: timer = 2;
+"118
+[e = _timer -> -> 2 `i `ui ]
+[; ;main.c: 119: system_state = STARTING;
+"119
+[e = _system_state -> . `E614 3 `uc ]
+"120
 }
 [e :U 82 ]
-[; ;main.c: 101: }
-[; ;main.c: 102: break;
-"102
-[e $U 75  ]
-[; ;main.c: 103: case STARTING:
-"103
-[e :U 83 ]
-[; ;main.c: 104: GPIObits.GP1 = 1;
-"104
-[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 105: if (0 == timer)
-"105
-[e $ ! == -> 0 `i -> _timer `i 84  ]
-[; ;main.c: 106: {
-"106
-{
-[; ;main.c: 107: system_state = AT_THE_GUARD;
-"107
-[e = _system_state -> . `E611 4 `uc ]
-"108
-}
-[e :U 84 ]
-[; ;main.c: 108: }
-[; ;main.c: 109: break;
-"109
-[e $U 75  ]
-[; ;main.c: 110: case AT_THE_GUARD:
-"110
-[e :U 85 ]
-[; ;main.c: 111: if (timer) GPIObits.GP1 = 1;
-"111
-[e $ ! != -> _timer `i -> -> -> 0 `i `uc `i 86  ]
-[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
-[e $U 87  ]
-"112
-[e :U 86 ]
-[; ;main.c: 112: else GPIObits.GP1 = 0;
-[e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
-[e :U 87 ]
-[; ;main.c: 113: if((GPIObits.GP2 == 0) && !timer)
-"113
-[e $ ! && == -> . . _GPIObits 0 2 `i -> 0 `i ! != -> _timer `i -> -> -> 0 `i `uc `i 88  ]
-[; ;main.c: 114: {
-"114
-{
-[; ;main.c: 115: timer = 191;
-"115
-[e = _timer -> -> 191 `i `uc ]
-"116
-}
-[e :U 88 ]
-[; ;main.c: 116: }
-[; ;main.c: 117: if((GPIObits.GP4 == 0))
-"117
-[e $ ! == -> . . _GPIObits 0 4 `i -> 0 `i 89  ]
-[; ;main.c: 118: {
-"118
-{
-[; ;main.c: 119: timer = 1;
-"119
-[e = _timer -> -> 1 `i `uc ]
-[; ;main.c: 120: system_state = STOPPING_FIST_SIREN;
-"120
-[e = _system_state -> . `E611 5 `uc ]
+[; ;main.c: 120: }
+[; ;main.c: 121: if((inputs & num_in[1]))
 "121
+[e $ ! != & -> _inputs `i -> *U + &U _num_in * -> -> -> 1 `i `ui `ux -> -> # *U &U _num_in `ui `ux `i -> 0 `i 83  ]
+[; ;main.c: 122: {
+"122
+{
+[; ;main.c: 123: timer = 2;
+"123
+[e = _timer -> -> 2 `i `ui ]
+[; ;main.c: 124: system_state = STOPPING_FIST_SIREN;
+"124
+[e = _system_state -> . `E614 5 `uc ]
+"125
+}
+[e :U 83 ]
+[; ;main.c: 125: }
+[; ;main.c: 126: break;
+"126
+[e $U 75  ]
+[; ;main.c: 127: case STARTING:
+"127
+[e :U 84 ]
+[; ;main.c: 128: GPIObits.GP1 = 1;
+"128
+[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 129: if (0 == timer)
+"129
+[e $ ! == -> -> 0 `i `ui _timer 85  ]
+[; ;main.c: 130: {
+"130
+{
+[; ;main.c: 131: system_state = AT_THE_GUARD;
+"131
+[e = _system_state -> . `E614 4 `uc ]
+"132
+}
+[e :U 85 ]
+[; ;main.c: 132: }
+[; ;main.c: 133: break;
+"133
+[e $U 75  ]
+[; ;main.c: 134: case AT_THE_GUARD:
+"134
+[e :U 86 ]
+[; ;main.c: 135: if (timer) GPIObits.GP1 = 1;
+"135
+[e $ ! != _timer -> -> 0 `i `ui 87  ]
+[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
+[e $U 88  ]
+"136
+[e :U 87 ]
+[; ;main.c: 136: else GPIObits.GP1 = 0;
+[e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
+[e :U 88 ]
+[; ;main.c: 137: if((inputs & num_in[0]) && !timer)
+"137
+[e $ ! && != & -> _inputs `i -> *U + &U _num_in * -> -> -> 0 `i `ui `ux -> -> # *U &U _num_in `ui `ux `i -> 0 `i ! != _timer -> -> 0 `i `ui 89  ]
+[; ;main.c: 138: {
+"138
+{
+[; ;main.c: 139: timer = 300;
+"139
+[e = _timer -> -> 300 `i `ui ]
+"140
 }
 [e :U 89 ]
-[; ;main.c: 121: }
-[; ;main.c: 122: break;
-"122
-[e $U 75  ]
-[; ;main.c: 123: case STOPPING_FIST_SIREN:
-"123
-[e :U 90 ]
-[; ;main.c: 124: GPIObits.GP1 = 1;
-"124
-[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 125: GPIObits.GP0 = 0;
-"125
-[e = . . _GPIObits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 126: if (0 == timer)
-"126
-[e $ ! == -> 0 `i -> _timer `i 91  ]
-[; ;main.c: 127: {
-"127
-{
-[; ;main.c: 128: timer = 1;
-"128
-[e = _timer -> -> 1 `i `uc ]
-[; ;main.c: 129: system_state = STOPPING_SECOND_SIREN;
-"129
-[e = _system_state -> . `E611 6 `uc ]
-"130
-}
-[e :U 91 ]
-[; ;main.c: 130: }
-[; ;main.c: 131: break;
-"131
-[e $U 75  ]
-[; ;main.c: 132: case STOPPING_SECOND_SIREN:
-"132
-[e :U 92 ]
-[; ;main.c: 133: GPIObits.GP1 = 0;
-"133
-[e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 134: if (0 == timer)
-"134
-[e $ ! == -> 0 `i -> _timer `i 93  ]
-[; ;main.c: 135: {
-"135
-{
-[; ;main.c: 136: timer = 1;
-"136
-[e = _timer -> -> 1 `i `uc ]
-[; ;main.c: 137: system_state = STOPPING;
-"137
-[e = _system_state -> . `E611 7 `uc ]
-"138
-}
-[e :U 93 ]
-[; ;main.c: 138: }
-[; ;main.c: 139: break;
-"139
-[e $U 75  ]
-[; ;main.c: 140: case STOPPING:
-"140
-[e :U 94 ]
-[; ;main.c: 141: GPIObits.GP1 = 1;
+[; ;main.c: 140: }
+[; ;main.c: 141: if((inputs & num_in[1]))
 "141
-[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 142: if (0 == timer)
+[e $ ! != & -> _inputs `i -> *U + &U _num_in * -> -> -> 1 `i `ui `ux -> -> # *U &U _num_in `ui `ux `i -> 0 `i 90  ]
+[; ;main.c: 142: {
 "142
-[e $ ! == -> 0 `i -> _timer `i 95  ]
-[; ;main.c: 143: {
-"143
 {
-[; ;main.c: 144: system_state = WITHOUT_PROTECT;
+[; ;main.c: 143: timer = 2;
+"143
+[e = _timer -> -> 2 `i `ui ]
+[; ;main.c: 144: system_state = STOPPING_FIST_SIREN;
 "144
-[e = _system_state -> . `E611 0 `uc ]
+[e = _system_state -> . `E614 5 `uc ]
 "145
 }
-[e :U 95 ]
+[e :U 90 ]
 [; ;main.c: 145: }
 [; ;main.c: 146: break;
 "146
 [e $U 75  ]
-[; ;main.c: 147: default:
+[; ;main.c: 147: case STOPPING_FIST_SIREN:
 "147
-[e :U 96 ]
-[; ;main.c: 149: break;
+[e :U 91 ]
+[; ;main.c: 148: GPIObits.GP1 = 1;
+"148
+[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 149: GPIObits.GP0 = 0;
 "149
-[e $U 75  ]
+[e = . . _GPIObits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 150: if (0 == timer)
 "150
-}
-[; ;main.c: 150: }
-[e $U 75  ]
-"76
-[e :U 76 ]
-[e [\ _system_state , $ -> . `E611 0 `uc 77
- , $ -> . `E611 1 `uc 79
- , $ -> . `E611 2 `uc 81
- , $ -> . `E611 3 `uc 83
- , $ -> . `E611 4 `uc 85
- , $ -> . `E611 5 `uc 90
- , $ -> . `E611 6 `uc 92
- , $ -> . `E611 7 `uc 94
- 96 ]
-"150
-[e :U 75 ]
+[e $ ! == -> -> 0 `i `ui _timer 92  ]
+[; ;main.c: 151: {
 "151
+{
+[; ;main.c: 152: timer = 2;
+"152
+[e = _timer -> -> 2 `i `ui ]
+[; ;main.c: 153: system_state = STOPPING_SECOND_SIREN;
+"153
+[e = _system_state -> . `E614 6 `uc ]
+"154
+}
+[e :U 92 ]
+[; ;main.c: 154: }
+[; ;main.c: 155: break;
+"155
+[e $U 75  ]
+[; ;main.c: 156: case STOPPING_SECOND_SIREN:
+"156
+[e :U 93 ]
+[; ;main.c: 157: GPIObits.GP1 = 0;
+"157
+[e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 158: if (0 == timer)
+"158
+[e $ ! == -> -> 0 `i `ui _timer 94  ]
+[; ;main.c: 159: {
+"159
+{
+[; ;main.c: 160: timer = 2;
+"160
+[e = _timer -> -> 2 `i `ui ]
+[; ;main.c: 161: system_state = STOPPING;
+"161
+[e = _system_state -> . `E614 7 `uc ]
+"162
+}
+[e :U 94 ]
+[; ;main.c: 162: }
+[; ;main.c: 163: break;
+"163
+[e $U 75  ]
+[; ;main.c: 164: case STOPPING:
+"164
+[e :U 95 ]
+[; ;main.c: 165: GPIObits.GP1 = 1;
+"165
+[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 166: if (0 == timer)
+"166
+[e $ ! == -> -> 0 `i `ui _timer 96  ]
+[; ;main.c: 167: {
+"167
+{
+[; ;main.c: 168: system_state = WITHOUT_PROTECT;
+"168
+[e = _system_state -> . `E614 0 `uc ]
+"169
+}
+[e :U 96 ]
+[; ;main.c: 169: }
+[; ;main.c: 170: break;
+"170
+[e $U 75  ]
+[; ;main.c: 171: default:
+"171
+[e :U 97 ]
+[; ;main.c: 173: break;
+"173
+[e $U 75  ]
+"174
+}
+[; ;main.c: 174: }
+[e $U 75  ]
+"95
+[e :U 76 ]
+[e [\ _system_state , $ -> . `E614 0 `uc 77
+ , $ -> . `E614 1 `uc 79
+ , $ -> . `E614 2 `uc 81
+ , $ -> . `E614 3 `uc 84
+ , $ -> . `E614 4 `uc 86
+ , $ -> . `E614 5 `uc 91
+ , $ -> . `E614 6 `uc 93
+ , $ -> . `E614 7 `uc 95
+ 97 ]
+"174
+[e :U 75 ]
+"175
 }
 [e :U 70 ]
-"68
+"85
 [e $U 71  ]
 [e :U 72 ]
-[; ;main.c: 151: }
-[; ;main.c: 152: }
-"152
+[; ;main.c: 175: }
+[; ;main.c: 176: }
+"176
 [e :UE 69 ]
+}
+"178
+[v _unharitate `(uc ~T0 @X0 1 ef ]
+"179
+{
+[; ;main.c: 178: uint8_t unharitate(void)
+[; ;main.c: 179: {
+[e :U _unharitate ]
+[f ]
+"180
+[v F627 `ui ~T0 @X0 + -> 3 `ui -> -> 1 `i `ui s cnt ]
+"181
+[v F628 `uc ~T0 @X0 1 s in_state ]
+[i F628
+-> -> 0 `i `uc
+]
+"182
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 180: static uint16_t cnt[3U+1];
+[; ;main.c: 181: static uint8_t in_state = 0;
+[; ;main.c: 182: uint8_t i = 0;
+[e = _i -> -> 0 `i `uc ]
+[; ;main.c: 184: for (i=0; i<3U; i++)
+"184
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `ui -> 3 `ui 99  ]
+[e $U 100  ]
+"185
+[e :U 99 ]
+[; ;main.c: 185: {
+{
+[; ;main.c: 186: if( !(GPIO & num_in[i]) )
+"186
+[e $ ! ! != & -> _GPIO `i -> *U + &U _num_in * -> _i `ux -> -> # *U &U _num_in `ui `ux `i -> 0 `i 102  ]
+[; ;main.c: 187: cnt[i]++;
+"187
+[e ++ *U + &U F627 * -> _i `ux -> -> # *U &U F627 `ui `ux -> -> 1 `i `ui ]
+[e $U 103  ]
+"188
+[e :U 102 ]
+[; ;main.c: 188: else if (cnt[i]) cnt[i]--;
+[e $ ! != *U + &U F627 * -> _i `ux -> -> # *U &U F627 `ui `ux -> -> 0 `i `ui 104  ]
+[e -- *U + &U F627 * -> _i `ux -> -> # *U &U F627 `ui `ux -> -> 1 `i `ui ]
+[e :U 104 ]
+"189
+[e :U 103 ]
+}
+"184
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `ui -> 3 `ui 99  ]
+[e :U 100 ]
+"189
+}
+[; ;main.c: 189: }
+[; ;main.c: 190: if(++cnt[3] > 60000U)
+"190
+[e $ ! > =+ *U + &U F627 * -> -> -> 3 `i `ui `ux -> -> # *U &U F627 `ui `ux -> -> 1 `i `ui -> 60000 `ui 105  ]
+[; ;main.c: 191: {
+"191
+{
+[; ;main.c: 192: cnt[3] = 0;
+"192
+[e = *U + &U F627 * -> -> -> 3 `i `ui `ux -> -> # *U &U F627 `ui `ux -> -> 0 `i `ui ]
+[; ;main.c: 193: for (i=0; i<3U; i++)
+"193
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `ui -> 3 `ui 106  ]
+[e $U 107  ]
+"194
+[e :U 106 ]
+[; ;main.c: 194: {
+{
+[; ;main.c: 195: if(cnt[i] > 50000U) in_state |= num_in[i];
+"195
+[e $ ! > *U + &U F627 * -> _i `ux -> -> # *U &U F627 `ui `ux -> 50000 `ui 109  ]
+[e =| F628 *U + &U _num_in * -> _i `ux -> -> # *U &U _num_in `ui `ux ]
+[e $U 110  ]
+"196
+[e :U 109 ]
+[; ;main.c: 196: else in_state &= ~num_in[i];
+[e =& F628 -> ~ -> *U + &U _num_in * -> _i `ux -> -> # *U &U _num_in `ui `ux `i `uc ]
+[e :U 110 ]
+[; ;main.c: 197: cnt[i] = 0;
+"197
+[e = *U + &U F627 * -> _i `ux -> -> # *U &U F627 `ui `ux -> -> 0 `i `ui ]
+"198
+}
+"193
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `ui -> 3 `ui 106  ]
+[e :U 107 ]
+"198
+}
+"199
+}
+[e :U 105 ]
+[; ;main.c: 198: }
+[; ;main.c: 199: }
+[; ;main.c: 200: return in_state;
+"200
+[e ) F628 ]
+[e $UE 98  ]
+[; ;main.c: 201: }
+"201
+[e :UE 98 ]
 }

@@ -26,20 +26,22 @@ void InitApp(void)
     /* Setup analog functionality and port direction */
 
     /* Initialize peripherals */
+    OPTION_REG = 0;
+    
     T1CONbits.TMR1GE  = 0;
-    T1CONbits.T1CKPS  = 2;    
+    T1CONbits.T1CKPS  = 1;    
     T1CONbits.T1OSCEN = 0;
     T1CONbits.nT1SYNC = 0;        
     T1CONbits.TMR1CS  = 0;
     T1CONbits.TMR1ON  = 1;
     
     //  Pull-up is On
-    WPUbits.WPU0 = 1;
-    WPUbits.WPU1 = 1;
+    WPUbits.WPU0 = 0;
+    WPUbits.WPU1 = 0;
     WPUbits.WPU2 = 1;
     WPUbits.WPU4 = 1;
-    WPUbits.WPU5 = 1;
-            
+    WPUbits.WPU5 = 1;                
+    
     TRISIObits.TRISIO0 = 0;
     TRISIObits.TRISIO1 = 0;
     TRISIObits.TRISIO2 = 1;

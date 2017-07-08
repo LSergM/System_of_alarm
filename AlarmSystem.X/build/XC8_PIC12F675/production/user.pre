@@ -841,16 +841,18 @@ void InitApp(void)
 {
 
 # 29
+OPTION_REG = 0;
+
 T1CONbits.TMR1GE = 0;
-T1CONbits.T1CKPS = 2;
+T1CONbits.T1CKPS = 1;
 T1CONbits.T1OSCEN = 0;
 T1CONbits.nT1SYNC = 0;
 T1CONbits.TMR1CS = 0;
 T1CONbits.TMR1ON = 1;
 
 
-WPUbits.WPU0 = 1;
-WPUbits.WPU1 = 1;
+WPUbits.WPU0 = 0;
+WPUbits.WPU1 = 0;
 WPUbits.WPU2 = 1;
 WPUbits.WPU4 = 1;
 WPUbits.WPU5 = 1;

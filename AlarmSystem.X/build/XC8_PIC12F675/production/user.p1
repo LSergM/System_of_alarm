@@ -1,5 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"503 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic12f629.h
+"621 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic12f629.h
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"503
 [s S29 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
 [n S29 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS TMR1GE ]
 "511
@@ -614,61 +616,64 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;user.c: 23: {
 [e :U _InitApp ]
 [f ]
-[; ;user.c: 29: T1CONbits.TMR1GE = 0;
+[; ;user.c: 29: OPTION_REG = 0;
 "29
-[e = . . _T1CONbits 0 5 -> -> 0 `i `uc ]
-[; ;user.c: 30: T1CONbits.T1CKPS = 2;
-"30
-[e = . . _T1CONbits 0 4 -> -> 2 `i `uc ]
-[; ;user.c: 31: T1CONbits.T1OSCEN = 0;
+[e = _OPTION_REG -> -> 0 `i `uc ]
+[; ;user.c: 31: T1CONbits.TMR1GE = 0;
 "31
-[e = . . _T1CONbits 0 3 -> -> 0 `i `uc ]
-[; ;user.c: 32: T1CONbits.nT1SYNC = 0;
+[e = . . _T1CONbits 0 5 -> -> 0 `i `uc ]
+[; ;user.c: 32: T1CONbits.T1CKPS = 1;
 "32
-[e = . . _T1CONbits 0 2 -> -> 0 `i `uc ]
-[; ;user.c: 33: T1CONbits.TMR1CS = 0;
+[e = . . _T1CONbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 33: T1CONbits.T1OSCEN = 0;
 "33
-[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
-[; ;user.c: 34: T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 0 3 -> -> 0 `i `uc ]
+[; ;user.c: 34: T1CONbits.nT1SYNC = 0;
 "34
+[e = . . _T1CONbits 0 2 -> -> 0 `i `uc ]
+[; ;user.c: 35: T1CONbits.TMR1CS = 0;
+"35
+[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 36: T1CONbits.TMR1ON = 1;
+"36
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;user.c: 37: WPUbits.WPU0 = 1;
-"37
-[e = . . _WPUbits 0 0 -> -> 1 `i `uc ]
-[; ;user.c: 38: WPUbits.WPU1 = 1;
-"38
-[e = . . _WPUbits 0 1 -> -> 1 `i `uc ]
-[; ;user.c: 39: WPUbits.WPU2 = 1;
+[; ;user.c: 39: WPUbits.WPU0 = 0;
 "39
-[e = . . _WPUbits 0 2 -> -> 1 `i `uc ]
-[; ;user.c: 40: WPUbits.WPU4 = 1;
+[e = . . _WPUbits 0 0 -> -> 0 `i `uc ]
+[; ;user.c: 40: WPUbits.WPU1 = 0;
 "40
-[e = . . _WPUbits 0 4 -> -> 1 `i `uc ]
-[; ;user.c: 41: WPUbits.WPU5 = 1;
+[e = . . _WPUbits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 41: WPUbits.WPU2 = 1;
 "41
-[e = . . _WPUbits 0 5 -> -> 1 `i `uc ]
-[; ;user.c: 43: TRISIObits.TRISIO0 = 0;
+[e = . . _WPUbits 0 2 -> -> 1 `i `uc ]
+[; ;user.c: 42: WPUbits.WPU4 = 1;
+"42
+[e = . . _WPUbits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 43: WPUbits.WPU5 = 1;
 "43
-[e = . . _TRISIObits 0 0 -> -> 0 `i `uc ]
-[; ;user.c: 44: TRISIObits.TRISIO1 = 0;
-"44
-[e = . . _TRISIObits 0 1 -> -> 0 `i `uc ]
-[; ;user.c: 45: TRISIObits.TRISIO2 = 1;
+[e = . . _WPUbits 0 5 -> -> 1 `i `uc ]
+[; ;user.c: 45: TRISIObits.TRISIO0 = 0;
 "45
-[e = . . _TRISIObits 0 2 -> -> 1 `i `uc ]
-[; ;user.c: 46: TRISIObits.TRISIO4 = 1;
+[e = . . _TRISIObits 0 0 -> -> 0 `i `uc ]
+[; ;user.c: 46: TRISIObits.TRISIO1 = 0;
 "46
-[e = . . _TRISIObits 0 4 -> -> 1 `i `uc ]
-[; ;user.c: 47: TRISIObits.TRISIO5 = 1;
+[e = . . _TRISIObits 0 1 -> -> 0 `i `uc ]
+[; ;user.c: 47: TRISIObits.TRISIO2 = 1;
 "47
-[e = . . _TRISIObits 0 5 -> -> 1 `i `uc ]
-[; ;user.c: 49: VRCON = 0;
+[e = . . _TRISIObits 0 2 -> -> 1 `i `uc ]
+[; ;user.c: 48: TRISIObits.TRISIO4 = 1;
+"48
+[e = . . _TRISIObits 0 4 -> -> 1 `i `uc ]
+[; ;user.c: 49: TRISIObits.TRISIO5 = 1;
 "49
+[e = . . _TRISIObits 0 5 -> -> 1 `i `uc ]
+[; ;user.c: 51: VRCON = 0;
+"51
 [e = _VRCON -> -> 0 `i `uc ]
-[; ;user.c: 50: CMCONbits.CM = 7;
-"50
-[e = . . _CMCONbits 0 0 -> -> 7 `i `uc ]
-[; ;user.c: 52: }
+[; ;user.c: 52: CMCONbits.CM = 7;
 "52
+[e = . . _CMCONbits 0 0 -> -> 7 `i `uc ]
+[; ;user.c: 54: }
+"54
 [e :UE 69 ]
 }
