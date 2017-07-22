@@ -12,18 +12,18 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-cinit CODE 0 10 10 B 2
-text1 CODE 0 B4 B4 86 2
-text2 CODE 0 13A 13A 1C 2
-text3 CODE 0 172 172 1 2
-text4 CODE 0 156 156 B 2
-maintext CODE 0 1B 1B 99 2
-cstackBANK0 BANK0 1 20 20 D 1
+cinit CODE 0 10 10 D 2
+text1 CODE 0 DD DD 9 2
+text2 CODE 0 AD AD 1C 2
+text3 CODE 0 EE EE 1 2
+text4 CODE 0 C9 C9 B 2
+maintext CODE 0 1D 1D 90 2
+cstackBANK0 BANK0 1 2B 2B 9 1
 intentry CODE 0 4 4 B 2
-bssBANK0 BANK0 1 2D 2D 9 1
-strings STRING 0 161 161 9 2
-swtext1 CONST 0 16A 16A 8 2
-$C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
+bssBANK0 BANK0 1 20 20 B 1
+strings STRING 0 D4 D4 9 2
+swtext1 CONST 0 E6 E6 8 2
+$C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 F F 1 2
 config CONFIG 0 2007 2007 1 2
@@ -33,23 +33,23 @@ config CONFIG 0 2007 2007 1 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 36-5D 1
-BANK0 36-5D 1
+RAM 34-5D 1
+BANK0 34-5D 1
 CONST 1-3 2
-CONST 173-3FE 2
+CONST EF-3FE 2
 ENTRY 1-3 2
-ENTRY 173-3FE 2
+ENTRY EF-3FE 2
 IDLOC 2000-2003 2
-STACK 36-5D 1
+STACK 34-5D 1
 CODE 1-3 2
-CODE 173-3FE 2
+CODE EF-3FE 2
 SFR0 0-1F 1
 SFR1 80-DD 1
 EEDATA 2100-217F 2
 STRCODE 1-3 2
-STRCODE 173-3FE 2
+STRCODE EF-3FE 2
 STRING 1-3 2
-STRING 173-3FE 2
+STRING EF-3FE 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -64,120 +64,111 @@ STRING 173-3FE 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-10 cinit CODE >380:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-10 cinit CODE >383:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-10 cinit CODE >397:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-11 cinit CODE >398:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-12 cinit CODE >399:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-13 cinit CODE >400:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-14 cinit CODE >401:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-15 cinit CODE >402:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-16 cinit CODE >403:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-17 cinit CODE >404:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-18 cinit CODE >405:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-19 cinit CODE >411:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-19 cinit CODE >413:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
-1A cinit CODE >414:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.
+10 cinit CODE >383:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+10 cinit CODE >386:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+10 cinit CODE >403:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+11 cinit CODE >404:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+12 cinit CODE >405:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+13 cinit CODE >406:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+14 cinit CODE >407:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+15 cinit CODE >408:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+16 cinit CODE >409:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+17 cinit CODE >410:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+18 cinit CODE >411:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+19 cinit CODE >412:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+1A cinit CODE >413:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+1B cinit CODE >419:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+1B cinit CODE >421:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
+1C cinit CODE >422:C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.
 4 intentry CODE >23:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\interrupts.c
-156 text4 CODE >23:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\interrupts.c
-156 text4 CODE >50:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\interrupts.c
-172 text3 CODE >18:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\system.c
-172 text3 CODE >40:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\system.c
-13A text2 CODE >22:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-13A text2 CODE >29:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-13C text2 CODE >31:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-13E text2 CODE >32:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-142 text2 CODE >33:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-143 text2 CODE >34:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-144 text2 CODE >35:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-145 text2 CODE >36:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-146 text2 CODE >39:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-148 text2 CODE >40:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-149 text2 CODE >41:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-14A text2 CODE >42:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-14B text2 CODE >43:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-14C text2 CODE >45:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-14D text2 CODE >46:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-14E text2 CODE >47:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-14F text2 CODE >48:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-150 text2 CODE >49:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-151 text2 CODE >51:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-152 text2 CODE >52:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-155 text2 CODE >54:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
-B4 text1 CODE >178:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-B4 text1 CODE >182:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-B6 text1 CODE >184:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-BB text1 CODE >186:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-C2 text1 CODE >187:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-CE text1 CODE >188:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-EA text1 CODE >184:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-F2 text1 CODE >190:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-FF text1 CODE >192:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-101 text1 CODE >193:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-106 text1 CODE >195:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-120 text1 CODE >196:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-128 text1 CODE >197:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-130 text1 CODE >193:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-138 text1 CODE >200:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-16A swtext1 CONST >95:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-1B maintext CODE >63:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-1B maintext CODE >76:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-1E maintext CODE >77:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-1F maintext CODE >78:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-21 maintext CODE >80:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-22 maintext CODE >83:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-23 maintext CODE >95:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-24 maintext CODE >97:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-24 maintext CODE >98:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-25 maintext CODE >99:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-2B maintext CODE >101:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-2F maintext CODE >102:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-31 maintext CODE >104:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-32 maintext CODE >105:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-32 maintext CODE >106:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-33 maintext CODE >107:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-37 maintext CODE >109:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-3B maintext CODE >110:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-3D maintext CODE >113:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-3D maintext CODE >114:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-3E maintext CODE >115:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-3F maintext CODE >116:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-43 maintext CODE >118:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-47 maintext CODE >119:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-4B maintext CODE >121:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-4C maintext CODE >127:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-4C maintext CODE >128:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-4D maintext CODE >129:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-51 maintext CODE >131:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-53 maintext CODE >135:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-59 maintext CODE >136:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-5A maintext CODE >137:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-66 maintext CODE >139:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-6A maintext CODE >141:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-70 maintext CODE >143:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-74 maintext CODE >144:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-76 maintext CODE >147:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-76 maintext CODE >148:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-77 maintext CODE >149:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-78 maintext CODE >150:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-7C maintext CODE >152:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-80 maintext CODE >153:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-82 maintext CODE >156:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-82 maintext CODE >157:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-83 maintext CODE >158:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-87 maintext CODE >160:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-8B maintext CODE >161:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-8F maintext CODE >163:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-90 maintext CODE >164:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-90 maintext CODE >165:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-91 maintext CODE >166:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-94 maintext CODE >168:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-95 maintext CODE >87:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-98 maintext CODE >89:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-99 maintext CODE >90:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-A3 maintext CODE >93:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-A8 maintext CODE >95:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
-B3 maintext CODE >85:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+C9 text4 CODE >23:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\interrupts.c
+C9 text4 CODE >50:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\interrupts.c
+EE text3 CODE >18:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\system.c
+EE text3 CODE >40:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\system.c
+AD text2 CODE >22:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+AD text2 CODE >29:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+AF text2 CODE >31:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+B1 text2 CODE >32:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+B5 text2 CODE >33:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+B6 text2 CODE >34:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+B7 text2 CODE >35:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+B8 text2 CODE >36:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+B9 text2 CODE >39:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+BB text2 CODE >40:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+BC text2 CODE >41:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+BD text2 CODE >42:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+BE text2 CODE >43:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+BF text2 CODE >45:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C0 text2 CODE >46:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C1 text2 CODE >47:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C2 text2 CODE >48:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C3 text2 CODE >49:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C4 text2 CODE >51:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C5 text2 CODE >52:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+C8 text2 CODE >54:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\user.c
+DD text1 CODE >180:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+DD text1 CODE >182:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+DF text1 CODE >183:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+E3 text1 CODE >184:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+E5 text1 CODE >185:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+E6 swtext1 CONST >97:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+1D maintext CODE >66:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+1D maintext CODE >79:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+20 maintext CODE >80:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+21 maintext CODE >82:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+22 maintext CODE >85:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+23 maintext CODE >89:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+24 maintext CODE >91:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+25 maintext CODE >92:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+2F maintext CODE >97:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+30 maintext CODE >99:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+30 maintext CODE >100:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+31 maintext CODE >101:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+33 maintext CODE >103:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+38 maintext CODE >104:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+3B maintext CODE >106:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+3C maintext CODE >107:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+3C maintext CODE >108:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+3D maintext CODE >109:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+41 maintext CODE >111:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+46 maintext CODE >112:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+48 maintext CODE >115:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+48 maintext CODE >116:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+49 maintext CODE >117:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+4A maintext CODE >118:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+4E maintext CODE >120:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+53 maintext CODE >121:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+58 maintext CODE >123:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+59 maintext CODE >129:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+59 maintext CODE >130:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+5A maintext CODE >131:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+5E maintext CODE >133:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+60 maintext CODE >137:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+66 maintext CODE >138:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+67 maintext CODE >139:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+6D maintext CODE >141:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+72 maintext CODE >143:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+75 maintext CODE >145:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+7A maintext CODE >146:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+7C maintext CODE >149:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+7C maintext CODE >150:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+7D maintext CODE >151:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+7E maintext CODE >152:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+82 maintext CODE >154:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+87 maintext CODE >155:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+89 maintext CODE >158:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+89 maintext CODE >159:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+8A maintext CODE >160:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+8E maintext CODE >162:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+93 maintext CODE >163:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+98 maintext CODE >165:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+99 maintext CODE >166:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+99 maintext CODE >167:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+9A maintext CODE >168:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+9D maintext CODE >170:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+9E maintext CODE >89:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+A1 maintext CODE >97:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
+AC maintext CODE >87:D:\Test_Prj\Alarm_System\System_of_alarm\AlarmSystem.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -199,42 +190,46 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _T1CONbits 10 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hstrings 7FE 0 ABS 0 strings -
 _GPIO 5 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-_main 36 0 CODE 0 maintext dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+_TMR1 E 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+_main 3A 0 CODE 0 maintext dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 btemp 5E 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 _TRISIObits 85 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-start 1E 0 CODE 0 init C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
+start 1E 0 CODE 0 init C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
 __size_of_main 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 _WPUbits 95 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__size_of_SetTimer 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_ConfigureOscillator 2E6 0 CODE 0 text3 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-intlevel1 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-intlevel2 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-intlevel3 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-intlevel4 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-intlevel5 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-_InitApp 274 0 CODE 0 text2 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__end_of_ConfigureOscillator 1DE 0 CODE 0 text3 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+intlevel1 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+intlevel2 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+intlevel3 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+intlevel4 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+intlevel5 0 0 CODE 0 functab C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+_InitApp 15A 0 CODE 0 text2 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 _CMCONbits 19 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 wtemp0 5E 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
-unharitate@in_state 35 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+unharitate@in_state 2A 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hclrtext 7FE 0 ABS 0 clrtext -
 __CFG_FOSC$INTRCIO 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+_SetTimer 1BA 0 CODE 0 text1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lmaintext 7FE 0 ABS 0 maintext -
+__end_of_SetTimer 1CC 0 CODE 0 text1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 _OPTION_REG 81 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 start_initialization 20 0 CODE 0 cinit dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__end_of_num_in 2D4 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-main@system_state 29 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
+__pcstackBANK0 2B 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__end_of_num_in 1BA 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+main@system_state 33 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
 __Hbank0 7FE 0 ABS 0 bank0 -
 __Hbank1 7FE 0 BANK1 1 bank1 -
-__Hcinit 36 0 CODE 0 cinit -
+__Hcinit 3A 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
-__stringbase 2CC 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__stringbase 1B2 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hmaintext 7FE 0 ABS 0 maintext -
 __Hcommon 7FE 0 ABS 0 common -
 __Hconfig 4010 0 CONFIG 0 config -
@@ -259,34 +254,30 @@ __Ltext 7FE 0 ABS 0 text -
 __LcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 7FE 0 ABS 0 cstackCOMMON -
 __S0 2008 0 ABS 0 - -
-__S1 36 0 ABS 0 - -
+__S1 34 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 2AC 0 CODE 0 text4 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+_isr 192 0 CODE 0 text4 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 saved_w 5E 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-_unharitate 168 0 CODE 0 text1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-unharitate@cnt 2D 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+unharitate@cnt 20 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hosccal 7FE 0 CODE 0 osccal -
-__end_of_isr 2C2 0 CODE 0 text4 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__end_of_isr 1A8 0 CODE 0 text4 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-__stringtab 2C2 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
+__stringtab 1A8 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
 __LbssBANK0 7FE 0 ABS 0 bssBANK0 -
 __size_of_InitApp 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-_num_in 2CE 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__pmaintext 36 0 CODE 0 maintext dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+_num_in 1B4 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__pmaintext 3A 0 CODE 0 maintext dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lcommon 7FE 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__end_of_unharitate 274 0 CODE 0 text1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-main@timer 2B 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-___osccal_val 7FE 0 CODE 0 osccal C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-unharitate@i 27 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-stackhi 0 0 ABS 0 - C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-stacklo 0 0 ABS 0 - C:\Users\SERHII~1.LOZ\AppData\Local\Temp\sbno.obj
-__end_of__stringtab 2CE 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+___osccal_val 7FE 0 CODE 0 osccal C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+stackhi 0 0 ABS 0 - C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+stacklo 0 0 ABS 0 - C:\Users\SERHII~1.LOZ\AppData\Local\Temp\s428.obj
+__end_of__stringtab 1B4 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -295,42 +286,43 @@ __HcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lend_init 1E 0 CODE 0 end_init -
 __LcstackCOMMON 7FE 0 ABS 0 cstackCOMMON -
-end_of_initialization 32 0 CODE 0 cinit dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+end_of_initialization 36 0 CODE 0 cinit dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hintentry 1E 0 CODE 0 intentry -
 __Losccal 7FE 0 CODE 0 osccal -
 __Lstrings 7FE 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 7FE 0 ABS 0 bssBANK0 -
-main@inputs 2A 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__ptext1 168 0 CODE 0 text1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__ptext2 274 0 CODE 0 text2 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__ptext3 2E4 0 CODE 0 text3 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__ptext4 2AC 0 CODE 0 text4 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__end_of_InitApp 2AC 0 CODE 0 text2 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+main@inputs 32 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__ptext1 1BA 0 CODE 0 text1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__ptext2 15A 0 CODE 0 text2 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__ptext3 1DC 0 CODE 0 text3 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__ptext4 192 0 CODE 0 text4 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__end_of_InitApp 192 0 CODE 0 text2 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __size_of_ConfigureOscillator 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization 32 0 CODE 0 cinit dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__end_of__initialization 36 0 CODE 0 cinit dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Lfunctab 0 0 CODE 0 functab -
 __Lclrtext 7FE 0 ABS 0 clrtext -
+SetTimer@ticks 2F 0 BANK0 1 cstackBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hend_init 20 0 CODE 0 end_init -
-__end_of_main 168 0 CODE 0 maintext dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-_ConfigureOscillator 2E4 0 CODE 0 text3 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__end_of_main 15A 0 CODE 0 maintext dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+_ConfigureOscillator 1DC 0 CODE 0 text3 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 _VRCON 99 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __Hram 7FE 0 ABS 0 ram -
 __Lram 7FE 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+_timer 28 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __size_of_isr 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 __initialization 20 0 CODE 0 cinit dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__pbssBANK0 2D 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__pstrings 2C2 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__size_of_unharitate 0 0 ABS 0 - dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
-__pswtext1 2D4 0 CONST 0 swtext1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__pstrings 1A8 0 STRING 0 strings dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
+__pswtext1 1CC 0 CONST 0 swtext1 dist/XC8_PIC12F675/production\AlarmSystem.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -356,10 +348,11 @@ __pswtext1 2D4 0 CONST 0 swtext1 dist/XC8_PIC12F675/production\AlarmSystem.X.pro
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text3 0 172 2E4 1 2
-cstackBANK0 1 20 20 16 1
-intentry 0 4 8 15D 2
+text1 0 DD 1BA 9 2
+text3 0 EE 1DC 1 2
+intentry 0 4 8 D0 2
 reset_vec 0 0 0 1 2
-strings 0 161 2C2 9 2
-swtext1 0 16A 2D4 8 2
+bssBANK0 1 20 20 14 1
+strings 0 D4 1A8 9 2
+swtext1 0 E6 1CC 8 2
 config 0 2007 400E 1 2

@@ -843,9 +843,12 @@ void InitApp(void);
 const uint8_t num_in[3U] = {0x04,0x10,0x20};
 
 uint8_t unharitate(void);
+void SetTimer(uint16_t ticks);
+
+uint16_t timer = 0;
 
 
-# 55
+# 58
 #pragma config FOSC = INTRCIO
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -869,7 +872,6 @@ STOPPING = 7,
 
 uint8_t system_state = STARTING_FIST_SIREN;
 uint8_t inputs = 0;
-uint16_t timer = 0;
 
 ConfigureOscillator();
 
@@ -884,15 +886,14 @@ PIR1bits.TMR1IF = 0;
 if (timer) timer--;
 }
 
-inputs = unharitate();
-
+# 97
 switch(system_state)
 {
 case WITHOUT_PROTECT:
 GPIObits.GP1 = 0;
-if((inputs & num_in[2]))
+if((0 == GPIObits.GP5))
 {
-timer = 2;
+SetTimer(1);
 system_state = STARTING_FIST_SIREN;
 }
 break;
@@ -900,7 +901,7 @@ case STARTING_FIST_SIREN:
 GPIObits.GP1 = 1;
 if (0 == timer)
 {
-timer = 200;
+SetTimer(200);
 system_state = STARTING_SECOND_SIREN;
 }
 break;
@@ -909,12 +910,12 @@ GPIObits.GP1 = 0;
 GPIObits.GP0 = 1;
 if (0 == timer)
 {
-timer = 2;
+SetTimer(1);
 system_state = STARTING;
 }
-if((inputs & num_in[1]))
+if((0 == GPIObits.GP4))
 {
-timer = 2;
+SetTimer(1);
 system_state = STOPPING_FIST_SIREN;
 }
 break;
@@ -928,13 +929,13 @@ break;
 case AT_THE_GUARD:
 if (timer) GPIObits.GP1 = 1;
 else GPIObits.GP1 = 0;
-if((inputs & num_in[0]) && !timer)
+if((0 == GPIObits.GP2) && !timer)
 {
-timer = 300;
+SetTimer(300);
 }
-if((inputs & num_in[1]))
+if((0 == GPIObits.GP4))
 {
-timer = 2;
+SetTimer(1);
 system_state = STOPPING_FIST_SIREN;
 }
 break;
@@ -943,7 +944,7 @@ GPIObits.GP1 = 1;
 GPIObits.GP0 = 0;
 if (0 == timer)
 {
-timer = 2;
+SetTimer(1);
 system_state = STOPPING_SECOND_SIREN;
 }
 break;
@@ -951,7 +952,7 @@ case STOPPING_SECOND_SIREN:
 GPIObits.GP1 = 0;
 if (0 == timer)
 {
-timer = 2;
+SetTimer(1);
 system_state = STOPPING;
 }
 break;
@@ -967,6 +968,13 @@ default:
 break;
 }
 }
+}
+
+void SetTimer(uint16_t ticks)
+{
+PIR1bits.TMR1IF = 0;
+timer = ticks;
+TMR1 = 0;
 }
 
 uint8_t unharitate(void)

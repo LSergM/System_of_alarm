@@ -17,7 +17,7 @@
 /******************************************************************************/
 /* User Global Variable Declaration                                           */
 /******************************************************************************/
-#define UN_HERITATE_ON
+//#define UN_HERITATE_ON
 #ifdef UN_HERITATE_ON
     #define IN_TURN_ON      (inputs & num_in[2]) 
     #define IN_TURN_OFF     (inputs & num_in[1])
@@ -33,7 +33,7 @@
 #define OUT_SUPPLAY_ON  GPIObits.GP0 = 1
 
 #define TIMER_40_SEC    200
-#define TIMER_250_MSEC  2
+#define TIMER_250_MSEC  1
 #define TIMER_1_SEC     4
 #define TIMER_30_SEC    300
 
@@ -46,6 +46,9 @@
 const uint8_t num_in[NUM_INPUT] = {0x04,0x10,0x20};
 
 uint8_t unharitate(void);
+void SetTimer(uint16_t ticks);
+
+uint16_t timer = 0;
 /******************************************************************************/
 /* Main Program                                                               */
 /******************************************************************************/
@@ -74,8 +77,7 @@ void main(void)
     };
     
     uint8_t system_state = STARTING_FIST_SIREN;
-    uint8_t inputs = 0;
-    uint16_t timer = 0;
+    uint8_t inputs = 0;    
     /* Configure the oscillator for the device */
     ConfigureOscillator();
 
@@ -98,7 +100,7 @@ void main(void)
                 OUT_SIREN_OFF;
                 if(IN_TURN_ON)
                 {                                    
-                    timer = TIMER_250_MSEC;
+                    SetTimer(TIMER_250_MSEC);
                     system_state = STARTING_FIST_SIREN;
                 }
                 break;
@@ -106,7 +108,7 @@ void main(void)
                 OUT_SIREN_ON;
                 if (0 == timer)
                 {  
-                    timer = TIMER_40_SEC;                    
+                    SetTimer(TIMER_40_SEC);                    
                     system_state = STARTING_SECOND_SIREN;
                 }                 
                 break;
@@ -115,12 +117,12 @@ void main(void)
                 OUT_SUPPLAY_ON;
                 if (0 == timer)
                 {  
-                    timer = TIMER_250_MSEC;                    
+                    SetTimer(TIMER_250_MSEC);                    
                     system_state = STARTING;
                 }            
                 if(IN_TURN_OFF)
                 {                  
-                    timer = TIMER_250_MSEC;
+                    SetTimer(TIMER_250_MSEC);
                     system_state = STOPPING_FIST_SIREN;
                 }
                 break;                
@@ -136,11 +138,11 @@ void main(void)
                 else       OUT_SIREN_OFF; 
                 if(IN_SENSOR && !timer)
                 {
-                   timer = TIMER_30_SEC;
+                   SetTimer(TIMER_30_SEC);
                 }
                 if(IN_TURN_OFF)
                 {   
-                    timer = TIMER_250_MSEC;
+                    SetTimer(TIMER_250_MSEC);
                     system_state = STOPPING_FIST_SIREN;
                 }                 
                 break;
@@ -149,7 +151,7 @@ void main(void)
                 OUT_SUPPLAY_OFF;
                 if (0 == timer)
                 {                    
-                    timer = TIMER_250_MSEC;                    
+                    SetTimer(TIMER_250_MSEC);                    
                     system_state = STOPPING_SECOND_SIREN;
                 }
                 break;
@@ -157,7 +159,7 @@ void main(void)
                 OUT_SIREN_OFF;
                 if (0 == timer)
                 {
-                    timer = TIMER_250_MSEC;                    
+                    SetTimer(TIMER_250_MSEC);                    
                     system_state = STOPPING;
                 }
                 break; 
@@ -173,6 +175,13 @@ void main(void)
                 break;
         }
     }
+}
+
+void SetTimer(uint16_t ticks)
+{
+    PIR1bits.TMR1IF = 0;
+    timer = ticks;
+    TMR1  = 0;
 }
 
 uint8_t unharitate(void)
